@@ -1,0 +1,126 @@
+/* X-large devices(large desktop...) */
+@media (max-width:1199.98px) {
+
+    .container {
+        width: 100%;
+        max-width: 1030px;
+    }
+
+    .inner .header .nav>ul>li>a {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .shop-wrapper .main .main-content {
+        --column: 2;
+    }
+
+    .footer .container> :first-child,
+    .footer .container> :last-child {
+        width: 270px;
+    }
+
+    .footer .logo ul {
+        flex-wrap: wrap;
+    }
+
+    .shop-wrapper .main .main-top {
+        width: 100%;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+/* Medium devices(tablet...) */
+@media (max-width:991.98px) {
+
+    .header .nav .logo-link {
+        display: block;
+        padding-left: 8px;
+    }
+
+    .header .nav {
+        position: fixed;
+        top: 0;
+        left: -101%;
+        bottom: 0;
+        z-index: 99;
+        width: 50%;
+        height: 100vh;
+        padding: 24px 0 24px 24px;
+        background-color: #111;
+
+    }
+
+    .header .nav-sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 98;
+        background-color: rgba(51, 51, 51, 0.445);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+
+    }
+
+    #drawer:checked~.nav {
+        left: 0;
+    }
+
+    #drawer:checked~.nav-sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .inner .header .nav>ul {
+        height: 100%;
+        margin-top: 24px;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 16px;
+        font-size: 1.8rem;
+    }
+
+    .header .nav .submenu {
+        position: initial;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        margin-left: 8px;
+    }
+
+    .header .nav li:hover .submenu {
+        display: block;
+    }
+
+    .header .nav .submenu a {
+        background-color: #1d1d1d;
+        color: #fff;
+    }
+
+    .drawer {
+        display: block;
+        align-self: flex-start;
+        color: #fff;
+        font-size: 2.5rem;
+        padding: 16px;
+        margin-left: -18px;
+
+    }
+    .body{
+        flex-wrap: wrap;
+    }
+    .sidebar{
+        width: calc(100% / var(--column) - var(--spacing));
+        order: 1;
+    }
+}
+
+/* Small devices(mobile...) */
+@media (max-width:767.98px) {}

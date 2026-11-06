@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/custom-checkbox.css">
 
@@ -16,25 +16,34 @@
 
 <body>
     <div class="wrapper">
-        <div class="check-box-wrapper">
-            <label for="check-box" class="label">Checkbox</label>
-            <input type="checkbox" name="" id="check-box" hidden>
-            <label for="check-box" class="check-box">
-                <i class="fa-solid fa-check"></i>
-            </label>
-        </div>
-        <div class="radio-wrapper">
-            <label for="radio" class="label">Radio</label>
-            <input type="checkbox" name="" id="radio" hidden>
-            <label for="radio" class="radio">
-            </label>
-        </div>
-        <div class="switch-wrapper">
-            <label for="switch" class="label">Switch</label>
-            <input type="checkbox" name="" id="switch" hidden>
-            <label for="switch" class="switch"></label>
+        <div class="box">
+            <div class="check-box-wrapper">
+                <label for="check-box" class="label">Checkbox</label>
+                <input type="checkbox" name="" id="check-box" hidden>
+                <label for="check-box" class="check-box">
+                    <i class="fa-solid fa-check"></i>
+                </label>
+            </div>
+            <div class="radio-wrapper">
+                <label for="" class="label">Radio</label>
+                <div class="radio-item">
+                    <input type="radio" name="option" id="radio-option-1" hidden>
+                    <label for="radio-option-1" class="radio"></label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="option" id="radio-option-2" hidden>
+                    <label for="radio-option-2" class="radio"></label>
+                </div>
+                </label>
+            </div>
+            <div class="switch-wrapper">
+                <label for="switch" class="label">Switch</label>
+                <input type="checkbox" name="" id="switch" hidden>
+                <label for="switch" class="switch"></label>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>

@@ -4,7 +4,8 @@
     --primary-color: #b80257;
     --secondary-color: #783df0;
     --border-color: #00000017;
-
+    --column: 3;
+    --spacing: 30px;
 }
 
 * {
@@ -62,6 +63,12 @@ select {
     background-size: cover;
 }
 
+img.logo {
+    width: 165px;
+    height: 33px;
+    object-fit: cover;
+}
+
 .courses-wrapper .header-wrapper {
     background-image: url(../img/banner-2.jpg);
 }
@@ -78,9 +85,10 @@ select {
 
 .container {
     display: flex;
-    width: 1170px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 15px;
 }
 
 .inner .container {
@@ -97,6 +105,22 @@ select {
 
 .header .nav {
     flex: 1;
+}
+
+.drawer {
+    display: none;
+}
+
+.drawer-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.header .nav .logo-link {
+    display: none;
 }
 
 .inner .header .nav>ul {
@@ -169,7 +193,8 @@ select {
 .header .action-user {
     position: relative;
 }
-.header .action-user .search-button{
+
+.header .action-user .search-button {
     padding-left: 10px;
     padding-right: 16px;
     cursor: pointer;
@@ -189,17 +214,21 @@ select {
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
 }
-.header .search-button-overlay{
+
+.header .search-button-overlay {
     position: fixed;
     inset: 0;
-    z-index: 998;
+    z-index: 98;
     background-color: #3333;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s ease;
-    
+
 }
-.header .action-user #drop-search-box-check:checked ~ .drop-search-box, .header .action-user #drop-search-box-check:checked ~ .search-button-overlay{
+
+.header .action-user #drop-search-box-check:checked~.drop-search-box,
+.header .action-user #drop-search-box-check:checked~.search-button-overlay
+ {
     opacity: 1;
     visibility: visible;
 }
@@ -221,12 +250,14 @@ select {
 }
 
 .inner .header a,
-.header button, .header label {
+.header button,
+.header label {
     color: aliceblue;
     text-decoration: none;
 }
 
-.inner .header button, .header label {
+.inner .header button,
+.header label {
     font-size: 2rem;
 }
 
@@ -277,7 +308,7 @@ select {
 }
 
 .main {
-    flex: 1;
+    flex-grow: 1;
 }
 
 .courses-wrapper .sidebar .search-box {
@@ -380,9 +411,9 @@ select {
     color: #000000b3;
     transition: color 0.3s ease;
 }
-.shop-wrapper .sidebar a:hover{
+
+.shop-wrapper .sidebar a:hover {
     color: var(--primary-color)
-    
 }
 
 .shop-wrapper .product-name,
@@ -431,43 +462,51 @@ select {
     justify-content: space-between;
     align-items: center;
 }
-.shop-wrapper .main .main-top .product-filter-wrapper{
+
+.shop-wrapper .main .main-top .product-filter-wrapper {
     position: relative;
 }
 
 .shop-wrapper .main .main-top .product-filter-label {
-    height: 45px;      
+    height: 45px;
     justify-content: space-between;
     border: 1px solid var(--border-color);
 }
-.shop-wrapper .main .main-top .product-filter-list{
+
+.shop-wrapper .main .main-top .product-filter-list {
     position: absolute;
-    top:100%;
+    top: 100%;
     left: 0;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.shop-wrapper .main .main-top .product-filter-list li, .shop-wrapper .main .main-top .product-filter-label{
+
+.shop-wrapper .main .main-top .product-filter-list li,
+.shop-wrapper .main .main-top .product-filter-label {
     display: flex;
     align-items: center;
     background-color: #fff;
     width: 200px;
     padding: 8px 12px;
     text-align: left;
-    color: #6f6f6f;    
+    color: #6f6f6f;
 }
-.shop-wrapper .main .main-top .product-filter-list li{
+
+.shop-wrapper .main .main-top .product-filter-list li {
     height: 40px;
 }
-.shop-wrapper .main .main-top .product-filter-list li:first-of-type{
+
+.shop-wrapper .main .main-top .product-filter-list li:first-of-type {
     background-color: var(--primary-color);
     color: #fff;
 }
-#product-filter-checkbox:checked ~ .product-filter-list{
+
+#product-filter-checkbox:checked~.product-filter-list {
     opacity: 1;
     visibility: visible;
 }
+
 .shop-wrapper .main .main-top .show-result {
     color: #6f6f6f;
     font-size: 1.8rem;
@@ -506,17 +545,18 @@ select {
     font-weight: 600;
 }
 
-.courses-wrapper .main .main-content, .shop-wrapper .main .main-content {
+.courses-wrapper .main .main-content,
+.shop-wrapper .main .main-content {
     display: flex;
     flex-wrap: wrap;
     row-gap: var(--spacing);
-    --column: 3;
-    --spacing: 30px;
+    
     margin-left: calc(-1 * var(--spacing));
     margin-top: 60px;
 }
 
-.courses-wrapper .main-content .item, .shop-wrapper .main-content .item {
+.courses-wrapper .main-content .item,
+.shop-wrapper .main-content .item {
     width: calc(100% / var(--column) - var(--spacing));
     display: flex;
     flex-direction: column;
@@ -528,11 +568,12 @@ select {
 }
 
 .courses-wrapper .main-content .item:hover .thumb-wrapper>img,
-.shop-wrapper .main-content .item:hover .thumb-wrapper>img  {
+.shop-wrapper .main-content .item:hover .thumb-wrapper>img {
     scale: 1.1;
 }
 
-.courses-wrapper .main-content .item .thumb-wrapper img, .shop-wrapper .main-content .item img {
+.courses-wrapper .main-content .item .thumb-wrapper img,
+.shop-wrapper .main-content .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -575,23 +616,24 @@ select {
     overflow: hidden;
 }
 
-.shop-wrapper .main-content .item .btn-price{
+.shop-wrapper .main-content .item .btn-price {
     width: 130px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .main-content .item .info {
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: space-between;    
+    justify-content: space-between;
     border: 1px solid #eeeeee;
     border-top: none;
 }
 
-.courses-wrapper .main-content .item .info {    
+.courses-wrapper .main-content .item .info {
     padding: 15px 20px;
     gap: 20px;
 }
@@ -631,12 +673,14 @@ select {
     margin-left: 8px;
 }
 
-.courses-wrapper .main-content .item .bottom .btn, .shop-wrapper .main-content .item .btn-price{
+.courses-wrapper .main-content .item .bottom .btn,
+.shop-wrapper .main-content .item .btn-price {
     position: relative;
     transition: transform 0.3s ease;
 }
 
-.courses-wrapper .main-content .item .bottom .btn::after, .shop-wrapper .main-content .item .btn-price::after {
+.courses-wrapper .main-content .item .bottom .btn::after,
+.shop-wrapper .main-content .item .btn-price::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -649,11 +693,13 @@ select {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.courses-wrapper .main-content .item .bottom .btn:hover, .shop-wrapper .main-content .item .btn-price:hover {
+.courses-wrapper .main-content .item .bottom .btn:hover,
+.shop-wrapper .main-content .item .btn-price:hover {
     transform: translateY(-4px);
 }
 
-.courses-wrapper .main-content .item .bottom .btn:hover::after, .shop-wrapper .main-content .item .btn-price:hover::after {
+.courses-wrapper .main-content .item .bottom .btn:hover::after,
+.shop-wrapper .main-content .item .btn-price:hover::after {
     opacity: 1;
     transform: translateY(4px);
 }
@@ -686,7 +732,8 @@ select {
     color: #fff;
     transition: background-color 0.3s ease;
 }
-.shop-wrapper .main .shop-pagination li:hover{
+
+.shop-wrapper .main .shop-pagination li:hover {
     background-color: var(--secondary-color);
 }
 
@@ -728,20 +775,17 @@ select {
 }
 
 .footer {
-    width: 100%;
     margin-top: 100px;
     background-color: #151515;
     padding-top: 80px;
     padding-bottom: 160px;
-}
-
-.footer .container {
     justify-content: space-between;
     gap: 30px;
 }
 
-.footer .container> :first-child,
-.footer .container> :last-child {
+
+.footer .desc,
+.footer .subscribe {
     width: 270px;
     display: flex;
     flex-direction: column;
@@ -771,16 +815,16 @@ select {
     margin-bottom: 25px;
 }
 
-.footer .logo ul {
+.footer .desc ul {
     display: flex;
     gap: 22px;
 }
 
-.footer .logo ul a {
+.footer .desc ul a {
     aspect-ratio: 11/4;
 }
 
-.footer .logo ul img {
+.footer .desc ul img {
     width: 100%;
     height: 100%;
     object-fit: scale-down;
@@ -839,7 +883,7 @@ select {
 }
 
 /* css cho outline-course.html */
-.outline-course-wrapper .course-content-wrapper{
+.outline-course-wrapper .course-content-wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -847,25 +891,28 @@ select {
     color: #333;
 }
 
-.outline-course-wrapper .course-content-wrapper h2{
+.outline-course-wrapper .course-content-wrapper h2 {
     align-self: center;
     font-size: 2rem;
 }
-.outline-course-wrapper .sidebar-menu{
+
+.outline-course-wrapper .sidebar-menu {
     width: 30%;
     height: 98vh;
     overflow-y: scroll;
     overflow-x: hidden;
     border: 1px solid #f1f1f1;
 }
-.outline-course-wrapper .sidebar-menu a{
+
+.outline-course-wrapper .sidebar-menu a {
     display: inline-block;
     min-height: 32px;
     text-decoration: none;
     padding: 4px;
     font-size: 1.6rem;
 }
-.outline-course-wrapper .sidebar-menu .heading{
+
+.outline-course-wrapper .sidebar-menu .heading {
     display: block;
     position: sticky;
     top: 0;
@@ -876,22 +923,27 @@ select {
     border-bottom: var(--border-color);
     transition: padding 0.3s ease, color 0.3s ease;
 }
-.outline-course-wrapper .sidebar-menu>li ul{
+
+.outline-course-wrapper .sidebar-menu>li ul {
     padding-left: 24px;
     color: #000000b3;
 }
-.outline-course-wrapper .sidebar-menu>li ul a{
+
+.outline-course-wrapper .sidebar-menu>li ul a {
     transition: color 0.3s ease, transform 0.3s ease;
 }
-.outline-course-wrapper .sidebar-menu>li ul a:hover{
+
+.outline-course-wrapper .sidebar-menu>li ul a:hover {
     color: var(--primary-color);
     transform: translateX(4px);
-    
+
 }
-.outline-course-wrapper .sidebar-menu .heading:hover{
+
+.outline-course-wrapper .sidebar-menu .heading:hover {
     padding-left: 8px;
     color: var(--primary-color);
 }
-.outline-course-wrapper .sidebar-menu .active{
+
+.outline-course-wrapper .sidebar-menu .active {
     color: var(--primary-color);
 }
