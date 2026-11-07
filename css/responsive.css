@@ -11,7 +11,7 @@
         padding-right: 8px;
     }
 
-    .shop-wrapper .main .main-content {
+    :root {
         --column: 2;
     }
 
@@ -50,10 +50,11 @@
         left: -101%;
         bottom: 0;
         z-index: 99;
-        width: 50%;
+        width: 70%;
         height: 100vh;
         padding: 24px 0 24px 24px;
         background-color: #111;
+        overflow-x: hidden;
 
     }
 
@@ -102,7 +103,10 @@
     .header .nav .submenu a {
         background-color: #1d1d1d;
         color: #fff;
+        padding-left: 1em;
+        padding-right: 1em;;
     }
+
 
     .drawer {
         display: block;
@@ -117,10 +121,39 @@
         flex-wrap: wrap;
     }
     .sidebar{
-        width: calc(100% / var(--column) - var(--spacing));
+        width: calc(100% / var(--column) - var(--spacing) / 2);
         order: 1;
     }
+    .footer .container{
+        flex-wrap: wrap;
+    }
+    .footer .container .desc,
+    .footer .container .subscribe{
+        flex-basis: 48%;
+    }
+    .footer .container .column{
+        flex-basis: 20%;
+    }
+
+
 }
 
 /* Small devices(mobile...) */
-@media (max-width:767.98px) {}
+@media (max-width:767.98px) {
+    .body{
+        gap: 60px;
+    }
+    .sidebar{
+        width: 100%;
+    }
+    .footer .container{
+        flex-direction: column;
+    }
+    .footer .container .desc,
+    .footer .container .subscribe,
+    .footer .container .column{
+        width: 100%;
+        flex-basis: initial;
+    }
+    
+}

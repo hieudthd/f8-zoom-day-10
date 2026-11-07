@@ -782,21 +782,30 @@ img.logo {
     justify-content: space-between;
     gap: 30px;
 }
-
+.footer .container{
+    justify-content: space-between;
+    gap: 30px;
+}
+.footer .column{
+    flex: 1
+}
 
 .footer .desc,
 .footer .subscribe {
     width: 270px;
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    padding: 0 15px;
 }
-
+.footer .desc{
+    gap: 22px;
+}
+.footer .subscribe form{
+    margin-top: 16px;
+}
 .footer p,
 .footer li {
     color: #ffffff99;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .footer .column a {
@@ -830,11 +839,6 @@ img.logo {
     object-fit: scale-down;
 }
 
-.footer .box-center {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-}
 
 .footer .column ul {
     display: flex;
