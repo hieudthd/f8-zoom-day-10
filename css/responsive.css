@@ -157,3 +157,9 @@
     }
     
 }
+
+@media (max-width: 575.98px){
+    :root{
+        --column: 1;
+    }
+}

@@ -144,3 +144,9 @@ body {
 #switch:checked~.switch {
     background-color: rgb(88, 179, 179);
 }
+.radio-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
